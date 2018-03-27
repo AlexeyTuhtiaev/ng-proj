@@ -1,14 +1,5 @@
-<input type="text" class="form-control" [(ngModel)]="carName">
-<button class="btn btn-primary" (click)="addCar()">Add Car</button>
+<app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
+<hr>
 
-<hr/>
+<app-car *ngFor="let car of cars" [carItem]="car"></app-car>
 
-<!--<app-car *ngFor="let car of cars"></app-car>-->
-
-<ul>
-  <li *ngFor="let date of dates; let ind = index">
-   <div>
-     <b>{{ind+1}}</b> - {{date.toDateString() | uppercase}}
-   </div>
-  </li>
-</ul>

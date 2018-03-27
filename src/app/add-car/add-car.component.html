@@ -1,0 +1,3 @@
+<input type="text" class="form-control" [(ngModel)]="carName">
+<input type="text" class="form-control" [(ngModel)]="carYear" (keyup.enter)="addCar()">
+<button class="btn btn-primary" (click)="addCar()">Add Car</button>
