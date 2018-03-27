@@ -1,9 +1,15 @@
+<input type="text" class="form-control" [(ngModel)]="carName">
 <button class="btn btn-primary" (click)="addCar()">Add Car</button>
-<p>{{addCarStatus}}</p>
+<p *ngIf="addCarStatus; else successStatus">Car was added</p>
+<ng-template #successStatus>
+  <p>Car wasn't added</p>
+</ng-template>
 <hr/>
-<app-car></app-car>
-<app-car></app-car>
 
-<hr/>
-<input type="text" class="form-control" #myInp (keyup.enter)="onKeyUp($event)">
-<p>{{inputText}}</p>
+<app-car *ngFor="let car of cars"></app-car>
+
+<ul>
+  <li *ngFor="let item of items; let ind = index">
+    <b>{{ind}}</b>>>  <b>{{item.id}}</b> - <i>{{item.name}}</i>
+  </li>
+</ul>
