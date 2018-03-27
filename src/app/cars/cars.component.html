@@ -9,13 +9,9 @@
 <!--<app-car *ngFor="let car of cars"></app-car>-->
 
 <ul>
-  <li *ngFor="let car of cars; let ind = index">
-   <div
-     [ngStyle]="{backgroundColor: (ind+1)%2 === 0 ? 'red':'transparent',
-   'color': 'blue'}"
-     [ngClass]="{'big-text': setBigCarText(car)}"
-   >
-     <b>{{ind+1}}</b> - {{car}}
+  <li *ngFor="let date of dates; let ind = index">
+   <div>
+     <b>{{ind+1}}</b> - {{date.toDateString() | uppercase}}
    </div>
   </li>
 </ul>
