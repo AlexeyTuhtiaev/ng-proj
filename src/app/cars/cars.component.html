@@ -6,10 +6,16 @@
 </ng-template>
 <hr/>
 
-<app-car *ngFor="let car of cars"></app-car>
+<!--<app-car *ngFor="let car of cars"></app-car>-->
 
 <ul>
-  <li *ngFor="let item of items; let ind = index">
-    <b>{{ind}}</b>>>  <b>{{item.id}}</b> - <i>{{item.name}}</i>
+  <li *ngFor="let car of cars; let ind = index">
+   <div
+     [ngStyle]="{backgroundColor: (ind+1)%2 === 0 ? 'red':'transparent',
+   'color': 'blue'}"
+     [ngClass]="{'big-text': setBigCarText(car)}"
+   >
+     <b>{{ind+1}}</b> - {{car}}
+   </div>
   </li>
 </ul>

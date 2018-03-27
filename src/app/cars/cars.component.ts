@@ -9,10 +9,7 @@ export class CarsComponent {
 
   carName='';
   addCarStatus=false;
-  cars=['Ford', 'Audi', 'BMW'];
-  items = [{id:3, name: 'item1'},
-            {id:4, name: 'item4'},
-            {id:7, name: 'item7'}];
+  cars=['Ford', 'Audi', 'BMW','Mazda', 'Audi', 'Bentley'];
 
   constructor() {
   }
@@ -20,6 +17,9 @@ export class CarsComponent {
   addCar(){
     this.addCarStatus=true;
     this.cars.push(this.carName);
+  }
+  setBigCarText(car: string){
+    return car.length>4 ? true: false
   }
 
 }
