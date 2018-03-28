@@ -10,12 +10,12 @@ import {Component, ContentChild, ElementRef, Input, ViewChild} from '@angular/co
     }`]
 })
 export class CarComponent {
-  @Input('carItem') car: {name: string, year: number};
-  @ContentChild('carHeading') carHeading:ElementRef;
-  private carItem = false;
-
-
-  ngAfterViewInit() {
-    console.log(this.carHeading);
-  }
+  // @Input('carItem') car: {name: string, year: number};
+  // @ContentChild('carHeading') carHeading:ElementRef;
+  // private carItem = false;
+  //
+  //
+  // ngAfterViewInit() {
+  //   console.log(this.carHeading);
+  // }
 }
