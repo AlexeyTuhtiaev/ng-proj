@@ -8,6 +8,7 @@ import { CarComponent } from './car/car.component';
 import {FormsModule} from '@angular/forms';
 import { AddCarComponent } from './add-car/add-car.component';
 import {BackgroundDirective} from './directives/background.directive';
+import {PowPipe} from './pow.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {BackgroundDirective} from './directives/background.directive';
     CarsComponent,
     CarComponent,
     AddCarComponent,
-    BackgroundDirective
+    BackgroundDirective,
+    PowPipe
   ],
   imports: [
     BrowserModule,
