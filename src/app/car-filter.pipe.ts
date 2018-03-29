@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'carFilter',
-  pure: false
+  pure: true
 })
 export class CarFilterPipe implements PipeTransform {
 
