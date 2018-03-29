@@ -10,6 +10,7 @@ import {BackgroundDirective} from './directives/background.directive';
 import {PowPipe} from './pow.pipe';
 import { CarFilterPipe } from './car-filter.pipe';
 import {CarsService} from './cars.service';
+import {ConsoleService} from './console.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {CarsService} from './cars.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ConsoleService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
