@@ -1,21 +1,28 @@
-import {Component, ContentChild, ElementRef, Input, ViewChild} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {ConsoleService} from '../console.service';
 
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
-  // styleUrls: ['./car.component.css']
-  styles: [`
-    h1, h2 {
-      color: red;
-    }`]
+  styleUrls: ['./car.component.css'],
+  providers: [ConsoleService]
 })
 export class CarComponent {
-  // @Input('carItem') car: {name: string, year: number};
-  // @ContentChild('carHeading') carHeading:ElementRef;
-  // private carItem = false;
-  //
-  //
-  // ngAfterViewInit() {
-  //   console.log(this.carHeading);
-  // }
+  @Input () car;
+
+  constructor(private consoleService: ConsoleService){
+
+  }
+
+  getClass(){
+    return{
+      'list-group-item-success':!this.car.isSold,
+      'list-group-item-danger':this.car.isSold,
+      'list-group-item':true
+    }
+  }
+  onAction(type: string) {
+    this.car.isSold = type === 'buy' ? true:false;
+    this.consoleService.log(`${this.car.name} status = ${type}`);
+  }
 }

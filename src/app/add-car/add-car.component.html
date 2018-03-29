@@ -1,4 +1,11 @@
-
-<input type="text" class="form-control" #carNameInput>
-<input type="text" class="form-control" #carYearInput >
-<button class="btn btn-primary" (click)="addCar(carNameInput)">Add Car</button>
+<input
+  [ngStyle]="{marginBottom: '10px'}"
+  type="text"
+  class="form-control"
+  [(ngModel)]="carName"
+>
+<button
+  class="btn btn-primary"
+  (click)="addCar()"
+>Add Car</button>
+<hr>
